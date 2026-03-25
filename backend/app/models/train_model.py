@@ -12,8 +12,8 @@ print("="*60)
 
 # Load data
 print("\n📊 Loading dataset...")
-train_df = pd.read_csv('data/migraine_train.csv')
-test_df = pd.read_csv('data/migraine_test.csv')
+train_df = pd.read_csv('../../data/migraine_train.csv')
+test_df = pd.read_csv('../../data/migraine_test.csv')
 
 # Separate features and target
 feature_columns = ['sleep_hours', 'stress_level', 'activity_level', 'screen_time',
@@ -88,9 +88,9 @@ os.makedirs('app/models/saved', exist_ok=True)
 
 # Save model and scaler
 print("\n💾 Saving model...")
-joblib.dump(model, 'app/models/saved/migraine_model.pkl')
-joblib.dump(scaler, 'app/models/saved/scaler.pkl')
-joblib.dump(feature_columns, 'app/models/saved/feature_columns.pkl')
+joblib.dump(model, '../models/saved/migraine_model.pkl')
+joblib.dump(scaler, '../models/saved/scaler.pkl')
+joblib.dump(feature_columns, '../models/saved/feature_columns.pkl')
 
 # Save feature importance for later use
 feature_importance.to_csv('app/models/saved/feature_importance.csv', index=False)
